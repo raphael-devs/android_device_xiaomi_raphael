@@ -46,11 +46,12 @@ import android.widget.Button;
 
 import java.util.List;
 
-import com.android.internal.util.custom.FileUtils;
 
 import org.lineageos.settings.R;
 import org.lineageos.settings.utils.LimitSizeList;
+import org.lineageos.settings.utils.FileUtils;
 
+import vendor.xiaomi.hardware.displayfeature.V1_0.IDisplayFeature;
 import vendor.xiaomi.hardware.motor.V1_0.IMotor;
 import vendor.xiaomi.hardware.motor.V1_0.IMotorCallback;
 import vendor.xiaomi.hardware.motor.V1_0.MotorEvent;
