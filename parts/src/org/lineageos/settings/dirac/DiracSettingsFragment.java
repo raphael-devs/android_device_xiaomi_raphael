@@ -22,6 +22,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -53,6 +54,7 @@ public class DiracSettingsFragment extends PreferenceFragment implements
     private SwitchPreference mHifi;
 
     private DiracUtils mDiracUtils;
+    private Handler mHandler = new Handler();
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
@@ -132,14 +134,31 @@ public class DiracSettingsFragment extends PreferenceFragment implements
     @Override
     public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
         mDiracUtils.setEnabled(isChecked);
-
         mTextView.setText(getString(isChecked ? R.string.switch_bar_on : R.string.switch_bar_off));
-        mSwitchBar.setActivated(isChecked);
-
-        if (!mDiracUtils.getHifiMode()) {
+        if (isChecked) {
+            mSwitchBar.setEnabled(false);
+            mHandler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    try {
+                        mSwitchBar.setEnabled(true);
+                        setEnabled(isChecked);
+                    } catch(Exception ignored) {
+                    }
+                }
+            }, 1020);
+        } else if (!mDiracUtils.getHifiMode()) {
             mHeadsetType.setEnabled(isChecked);
             mPreset.setEnabled(isChecked);
+        } else {
+            setEnabled(isChecked);
         }
+    }
+
+    private void setEnabled(boolean enabled) {
+        mSwitchBar.setActivated(enabled);
+        mHeadsetType.setEnabled(enabled);
+        mPreset.setEnabled(enabled);
     }
 
     @Override
