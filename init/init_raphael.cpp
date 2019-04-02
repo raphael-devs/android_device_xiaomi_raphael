@@ -34,28 +34,36 @@ void property_override(char const prop[], char const value[])
     else
         __system_property_add(prop, strlen(prop), value, strlen(value));
 }
+
+void property_override_dual(char const system_prop[], char const vendor_prop[],
+    char const value[])
+{
+    property_override(system_prop, value);
+    property_override(vendor_prop, value);
+}
+
 void load_raphaelglobal() {
     property_override("ro.product.model", "Mi 9T Pro");
     property_override("ro.build.product", "raphael");
     property_override("ro.product.device", "raphael");
-    property_override("ro.build.description", "raphael-user 9 PKQ1.181121.001 V10.3.1.0.PFKEUXM release-keys");
-    property_override("ro.build.fingerprint", "Xiaomi/raphael_eea/raphael:9/PKQ1.181121.001/V10.3.1.0.PFKEUXM:user/release-keys");
+    property_override("ro.build.description", "raphael-user 10 QKQ1.190825.002 V11.0.3.0.QFKEUXM release-keys");
+    property_override_dual("ro.build.fingerprint", "ro.vendor.build.fingerprint", "google/walleye/walleye:8.1.0/OPM1.171019.011/4448085:user/release-keys");
 }
 
 void load_raphaelin() {
     property_override("ro.product.model", "Redmi K20 Pro");
     property_override("ro.build.product", "raphaelin");
     property_override("ro.product.device", "raphaelin");
-    property_override("ro.build.description", "raphaelin-user 9 PKQ1.181121.001 V10.3.3.0.PFKINXM release-keys");
-    property_override("ro.build.fingerprint", "Xiaomi/raphaelin/raphaelin:9/PKQ1.181121.001/V10.3.3.0.PFKINXM:user/release-keys");
+    property_override("ro.build.description", "raphaelin-user 10 QKQ1.190825.002 V11.0.1.0.QFKINXM release-keys");
+    property_override_dual("ro.build.fingerprint", "ro.vendor.build.fingerprint", "google/walleye/walleye:8.1.0/OPM1.171019.011/4448085:user/release-keys");
 }
 
 void load_raphael() {
     property_override("ro.product.model", "Redmi K20 Pro");
     property_override("ro.build.product", "raphael");
     property_override("ro.product.device", "raphael");
-    property_override("ro.build.description", "raphael-user 9 PKQ1.181121.001 V10.3.12.0.PFKCNXM release-keys");
-    property_override("ro.build.fingerprint", "Xiaomi/raphael/raphael:9/PKQ1.181121.001/V10.3.12.0.PFKCNXM:user/release-keys");
+    property_override("ro.build.description", "raphael-user 10 QKQ1.190825.002 V11.0.2.0.QFKCNXM release-keys");
+    property_override_dual("ro.build.fingerprint", "ro.vendor.build.fingerprint", "google/walleye/walleye:8.1.0/OPM1.171019.011/4448085:user/release-keys");
 }
 
 
