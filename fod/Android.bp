@@ -18,7 +18,10 @@ cc_binary {
     defaults: ["hidl_defaults"],
     name: "lineage.biometrics.fingerprint.inscreen@1.0-service.raphael",
     init_rc: ["lineage.biometrics.fingerprint.inscreen@1.0-service.raphael.rc"],
-    srcs: ["service.cpp", "FingerprintInscreen.cpp"],
+    srcs: [
+	"service.cpp",
+        "FingerprintInscreen.cpp",
+    ],
     shared_libs: [
         "libbase",
         "libhardware",
@@ -28,7 +31,6 @@ cc_binary {
         "libhwbinder",
         "libutils",
         "vendor.lineage.biometrics.fingerprint.inscreen@1.0",
-        "vendor.xiaomi.hardware.displayfeature@1.0",
         "vendor.xiaomi.hardware.fingerprintextension@1.0",
     ],
 }
