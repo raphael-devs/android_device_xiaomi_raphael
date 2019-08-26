@@ -133,6 +133,42 @@ etc/excluded-input-devices.xml
 -product/priv-app/HotwordEnrollmentXGoogleHEXAGON/HotwordEnrollmentXGoogleHEXAGON.apk;PRESIGNED
 -product/priv-app/HotwordEnrollmentOKGoogleHEXAGON/HotwordEnrollmentOKGoogleHEXAGON.apk;PRESIGNED
 
+# Modules
+vendor/lib/modules/audio_adsp_loader.ko:lib/modules/audio_adsp_loader.ko
+vendor/lib/modules/audio_apr.ko:lib/modules/audio_apr.ko
+vendor/lib/modules/audio_cs35l41.ko:lib/modules/audio_cs35l41.ko
+vendor/lib/modules/audio_hdmi.ko:lib/modules/audio_hdmi.ko
+vendor/lib/modules/audio_machine_msmnile.ko:lib/modules/audio_machine_msmnile.ko
+vendor/lib/modules/audio_mbhc.ko:lib/modules/audio_mbhc.ko
+vendor/lib/modules/audio_native.ko:lib/modules/audio_native.ko
+vendor/lib/modules/audio_pinctrl_wcd.ko:lib/modules/audio_pinctrl_wcd.ko
+vendor/lib/modules/audio_platform.ko:lib/modules/audio_platform.ko
+vendor/lib/modules/audio_q6.ko:lib/modules/audio_q6.ko
+vendor/lib/modules/audio_q6_notifier.ko:lib/modules/audio_q6_notifier.ko
+vendor/lib/modules/audio_q6_pdr.ko:lib/modules/audio_q6_pdr.ko
+vendor/lib/modules/audio_stub.ko:lib/modules/audio_stub.ko
+vendor/lib/modules/audio_swr_ctrl.ko:lib/modules/audio_swr_ctrl.ko
+vendor/lib/modules/audio_swr.ko:lib/modules/audio_swr.ko
+vendor/lib/modules/audio_tas2557.ko:lib/modules/audio_tas2557.ko
+vendor/lib/modules/audio_tfa98xx.ko:lib/modules/audio_tfa98xx.ko
+vendor/lib/modules/audio_usf.ko:lib/modules/audio_usf.ko
+vendor/lib/modules/audio_wcd934x.ko:lib/modules/audio_wcd934x.ko
+vendor/lib/modules/audio_wcd9360.ko:lib/modules/audio_wcd9360.ko
+vendor/lib/modules/audio_wcd9xxx.ko:lib/modules/audio_wcd9xxx.ko
+vendor/lib/modules/audio_wcd_core.ko:lib/modules/audio_wcd_core.ko
+vendor/lib/modules/audio_wcd_spi.ko:lib/modules/audio_wcd_spi.ko
+vendor/lib/modules/audio_wglink.ko:lib/modules/audio_wglink.ko
+vendor/lib/modules/audio_wsa881x.ko:lib/modules/audio_wsa881x.ko
+vendor/lib/modules/exfat.ko:lib/modules/exfat.ko
+vendor/lib/modules/modules.alias:lib/modules/modules.alias
+vendor/lib/modules/modules.dep:lib/modules/modules.dep
+vendor/lib/modules/mpq-adapter.ko:lib/modules/mpq-adapter.ko
+vendor/lib/modules/mpq-dmx-hw-plugin.ko:lib/modules/mpq-dmx-hw-plugin.ko
+vendor/lib/modules/qca_cld3_wlan.ko:lib/modules/qca_cld3_wlan.ko
+vendor/lib/modules/rmnet_perf.ko:lib/modules/rmnet_perf.ko
+vendor/lib/modules/rmnet_shs.ko:lib/modules/rmnet_shs.ko
+vendor/lib/modules/tspp.ko:lib/modules/tspp.ko
+
 # Perf
 product/lib64/vendor.qti.hardware.iop@2.0.so
 product/lib64/vendor.qti.hardware.perf@2.0.so
