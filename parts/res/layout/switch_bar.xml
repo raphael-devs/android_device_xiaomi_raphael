@@ -31,12 +31,10 @@
         android:layout_gravity="center_vertical"
         android:layout_weight="1"
         android:ellipsize="end"
-        android:maxLines="2"
-        android:paddingStart="56dp"
-        android:textAlignment="viewStart"
         android:textAppearance="@android:style/TextAppearance.DeviceDefault.Widget.ActionBar.Title"
         android:textColor="?android:attr/textColorPrimaryInverse"
-        android:textSize="16sp" />
+        android:textSize="16sp"
+        android:textAlignment="viewStart" />
 
     <Switch
         android:id="@android:id/switch_widget"
