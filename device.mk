@@ -46,7 +46,7 @@ PRODUCT_COPY_FILES += \
 
 # Camera
 PRODUCT_PACKAGES += \
-    Snap
+    GoogleCamera
 
 # Device-specific settings
 PRODUCT_PACKAGES += \
