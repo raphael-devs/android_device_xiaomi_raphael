@@ -25,6 +25,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.data.mode=concurrent \
     ro.vendor.use_data_netmgrd=true
 
+# Disable priv-app permissions whitelist
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.control_privapp_permissions=log
+
 # Display
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.eyecare.brightness.threshold=11 \
