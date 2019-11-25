@@ -325,5 +325,8 @@
 
     <!-- If true, the camera will be used more often. -->
     <bool name="config_adaptive_sleep_available">false</bool>
+
+    <!-- Whether to use scaled brightness (set -1 to disable) -->
+    <integer name="config_useScaleBrightness">2047</integer>
 </resources>
 
