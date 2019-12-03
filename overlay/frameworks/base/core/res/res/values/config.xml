@@ -837,5 +837,13 @@
 
     <!-- Enable dual LTE capability support-->
     <bool name="config_dual_LTE_capability">true</bool>
+
+    <!-- Whether to post reset runnable for all clients. Needed for some older
+         vendor fingerprint HAL implementations. -->
+    <bool name="config_fingerprintPostResetRunnableForAllClients">true</bool>
+
+    <!-- Boolean indicating whether the HWC setColorTransform function can be performed efficiently
+         in hardware. -->
+    <bool name="config_setColorTransformAccelerated">true</bool>
 </resources>
 
