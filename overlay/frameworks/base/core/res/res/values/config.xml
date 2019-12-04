@@ -271,9 +271,9 @@
 
     <!-- Vibrator pattern for feedback about touching a virtual key -->
     <integer-array name="config_virtualKeyVibePattern">
-        <item>18</item>
-        <item>30</item>
-        <item>60</item>
+        <item>28</item>
+        <item>45</item>
+        <item>80</item>
     </integer-array>
 
     <!-- Should the pinner service pin the Camera application? -->
