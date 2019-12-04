@@ -107,6 +107,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # set lmkd options
 PRODUCT_PROPERTY_OVERRIDES += \
+    ro.lmk.use_psi=true \
     ro.lmk.low_ram=false \
     ro.lmk.kill_heaviest_task=true \
     ro.lmk.kill_timeout_ms=100 \
