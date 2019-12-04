@@ -105,6 +105,13 @@ PRODUCT_PROPERTY_OVERRIDES += \
     media.settings.xml=/system/etc/media_profiles_vendor.xml \
     vendor.mm.enable.qcom_parser=63963135
 
+# set lmkd options
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.lmk.low_ram=false \
+    ro.lmk.kill_heaviest_task=true \
+    ro.lmk.kill_timeout_ms=100 \
+    ro.lmk.use_minfree_levels=true
+
 # Memory optimizations
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.qti.sys.fw.bservice_enable=true
