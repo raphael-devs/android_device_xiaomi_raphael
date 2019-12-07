@@ -94,6 +94,7 @@ PRODUCT_BOOT_JARS += \
 PRODUCT_PACKAGES += \
     init.mi_thermald.rc \
     init.qcom.rc \
+    init.qcom.post_boot.sh \
     init.safailnet.rc
 
 # Input
