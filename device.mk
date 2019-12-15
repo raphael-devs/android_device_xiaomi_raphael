@@ -123,6 +123,8 @@ PRODUCT_PACKAGES += \
     nqnfcee_access.xml \
     nqnfcse_access.xml \
     NfcNci \
+    libnqnfc_nci_jni \
+    nfc_nci.nqx.default.hw \
     SecureElement \
     Tag
 
