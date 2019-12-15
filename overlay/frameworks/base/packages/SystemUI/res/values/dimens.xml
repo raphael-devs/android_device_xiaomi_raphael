@@ -17,7 +17,13 @@
 -->
 <resources>
     <dimen name="rounded_corner_content_padding">12dp</dimen>
+    <dimen name="round_corner_padding">7.0dip</dimen>
+    <dimen name="status_bar_content_number_size">48.0sp</dimen>
+    <dimen name="system_bar_height">48.0dip</dimen>
+    <dimen name="status_bar_height_portrait">24.0dip</dimen>
     <dimen name="system_icons_keyguard_padding_end">4dp</dimen>
+    <dimen name="navigation_side_padding">85.0dip</dimen>
+    <dimen name="recents_task_view_rounded_corners_radius">9.0dip</dimen>
     <!-- Default radius of the software rounded corners. -->
     <dimen name="rounded_corner_radius">31dp</dimen>
     <!-- Radius of the software rounded corners at the top of the display in its natural
