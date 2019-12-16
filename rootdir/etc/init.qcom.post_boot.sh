@@ -363,45 +363,25 @@ function configure_zram_parameters() {
 
     low_ram=`getprop ro.config.low_ram`
 
-    # Zram disk - 75% for Go devices.
-    # For 512MB Go device, size = 384MB, set same for Non-Go.
-    # For 1GB Go device, size = 768MB, set same for Non-Go.
-    # For >=2GB Non-Go devices, size = 50% of RAM size. Limit the size to 4GB.
-    # And enable lz4 zram compression for Go targets.
-
-    RamSizeGB=`echo "($MemTotal / 1048576 ) + 1" | bc`
-    zRamSizeBytes=`echo "$RamSizeGB * 1024 * 1024 * 1024 / 2" | bc`
-    if [ $zRamSizeBytes -gt 4294967296 ]; then
-        zRamSizeBytes=4294967296
-    fi
+    # Zram disk
+    # For >4GB device, size = 1024MB.
 
     if [ "$low_ram" == "true" ]; then
         echo lz4 > /sys/block/zram0/comp_algorithm
     fi
 
     if [ -f /sys/block/zram0/disksize ]; then
-        if [ -f /sys/block/zram0/use_dedup ]; then
-            echo 1 > /sys/block/zram0/use_dedup
-        fi
-        if [ $MemTotal -le 524288 ]; then
-            echo 402653184 > /sys/block/zram0/disksize
-        elif [ $MemTotal -le 1048576 ]; then
-            echo 805306368 > /sys/block/zram0/disksize
-        else
-            echo $zRamSizeBytes > /sys/block/zram0/disksize
+            echo 1073741824 > /sys/block/zram0/disksize
         fi
         mkswap /dev/block/zram0
         swapon /dev/block/zram0 -p 32758
-    fi
 }
 
 function configure_read_ahead_kb_values() {
     MemTotalStr=`cat /proc/meminfo | grep MemTotal`
     MemTotal=${MemTotalStr:16:8}
 
-    # Set 128 for <= 3GB &
-    # set 512 for >= 4GB targets.
-    if [ $MemTotal -le 3145728 ]; then
+    # Set 128 for >= 3GB
         echo 128 > /sys/block/mmcblk0/bdi/read_ahead_kb
         echo 128 > /sys/block/mmcblk0/queue/read_ahead_kb
         echo 128 > /sys/block/mmcblk0rpmb/bdi/read_ahead_kb
@@ -409,15 +389,6 @@ function configure_read_ahead_kb_values() {
         echo 128 > /sys/block/dm-0/queue/read_ahead_kb
         echo 128 > /sys/block/dm-1/queue/read_ahead_kb
         echo 128 > /sys/block/dm-2/queue/read_ahead_kb
-    else
-        echo 512 > /sys/block/mmcblk0/bdi/read_ahead_kb
-        echo 512 > /sys/block/mmcblk0/queue/read_ahead_kb
-        echo 512 > /sys/block/mmcblk0rpmb/bdi/read_ahead_kb
-        echo 512 > /sys/block/mmcblk0rpmb/queue/read_ahead_kb
-        echo 512 > /sys/block/dm-0/queue/read_ahead_kb
-        echo 512 > /sys/block/dm-1/queue/read_ahead_kb
-        echo 512 > /sys/block/dm-2/queue/read_ahead_kb
-    fi
 }
 
 function disable_core_ctl() {
@@ -534,13 +505,9 @@ else
         echo 53059 > /sys/module/lowmemorykiller/parameters/vmpressure_file_min
         fi
 
-        # Enable adaptive LMK for all targets &
-        # use Google default LMK series for all 64-bit targets >=2GB.
-        echo 1 > /sys/module/lowmemorykiller/parameters/enable_adaptive_lmk
-
-        # Enable oom_reaper
+        # Disable oom_reaper
         if [ -f /sys/module/lowmemorykiller/parameters/oom_reaper ]; then
-            echo 1 > /sys/module/lowmemorykiller/parameters/oom_reaper
+            echo 0 > /sys/module/lowmemorykiller/parameters/oom_reaper
         fi
 
         # Set PPR parameters
@@ -4567,52 +4534,55 @@ case "$target" in
 	echo 10 > /proc/sys/kernel/sched_group_downmigrate
 	echo 1 > /proc/sys/kernel/sched_walt_rotate_big_tasks
 
-	# cpuset parameters
-	echo 0-3 > /dev/cpuset/background/cpus
-	echo 0-3 > /dev/cpuset/system-background/cpus
-
 	# Turn off scheduler boost at the end
 	echo 0 > /proc/sys/kernel/sched_boost
 
 	# configure governor settings for silver cluster
 	echo "schedutil" > /sys/devices/system/cpu/cpufreq/policy0/scaling_governor
-	echo 0 > /sys/devices/system/cpu/cpufreq/policy0/schedutil/up_rate_limit_us
-        echo 0 > /sys/devices/system/cpu/cpufreq/policy0/schedutil/down_rate_limit_us
+	echo 500 > /sys/devices/system/cpu/cpufreq/policy0/schedutil/up_rate_limit_us
+        echo 20000 > /sys/devices/system/cpu/cpufreq/policy0/schedutil/down_rate_limit_us
 	echo 1209600 > /sys/devices/system/cpu/cpufreq/policy0/schedutil/hispeed_freq
 	echo 576000 > /sys/devices/system/cpu/cpufreq/policy0/scaling_min_freq
 	echo 1 > /sys/devices/system/cpu/cpufreq/policy0/schedutil/pl
 
 	# configure governor settings for gold cluster
 	echo "schedutil" > /sys/devices/system/cpu/cpufreq/policy4/scaling_governor
-	echo 0 > /sys/devices/system/cpu/cpufreq/policy4/schedutil/up_rate_limit_us
-        echo 0 > /sys/devices/system/cpu/cpufreq/policy0/schedutil/down_rate_limit_us
+	echo 500 > /sys/devices/system/cpu/cpufreq/policy4/schedutil/up_rate_limit_us
+        echo 20000 > /sys/devices/system/cpu/cpufreq/policy0/schedutil/down_rate_limit_us
 	echo 1612800 > /sys/devices/system/cpu/cpufreq/policy4/schedutil/hispeed_freq
 	echo 1 > /sys/devices/system/cpu/cpufreq/policy4/schedutil/pl
 
 	# configure governor settings for gold+ cluster
 	echo "schedutil" > /sys/devices/system/cpu/cpufreq/policy7/scaling_governor
-	echo 0 > /sys/devices/system/cpu/cpufreq/policy7/schedutil/up_rate_limit_us
-        echo 0 > /sys/devices/system/cpu/cpufreq/policy0/schedutil/down_rate_limit_us
+	echo 500 > /sys/devices/system/cpu/cpufreq/policy7/schedutil/up_rate_limit_us
+        echo 20000 > /sys/devices/system/cpu/cpufreq/policy0/schedutil/down_rate_limit_us
 	echo 1612800 > /sys/devices/system/cpu/cpufreq/policy7/schedutil/hispeed_freq
 	echo 1 > /sys/devices/system/cpu/cpufreq/policy7/schedutil/pl
 
 	# configure input boost settings
-	echo "0:1324800" > /sys/module/cpu_boost/parameters/input_boost_freq
-	echo 120 > /sys/module/cpu_boost/parameters/input_boost_ms
+	echo "0:1324800 4:1612800" > /sys/module/cpu_boost/parameters/input_boost_freq
+	echo 240 > /sys/module/cpu_boost/parameters/input_boost_ms
 
 	# Disable wsf, beacause we are using efk.
 	# wsf Range : 1..1000 So set to bare minimum value 1.
         echo 1 > /proc/sys/vm/watermark_scale_factor
 
-        echo 0-3 > /dev/cpuset/background/cpus
+	# configure cpusets
+        echo 0-1 > /dev/cpuset/background/cpus
         echo 0-3 > /dev/cpuset/system-background/cpus
+        echo 0-7 > /dev/cpuset/top-app/cpus
+        echo 0-3 > /dev/cpuset/foreground/cpus
+        echo 0-3 > /dev/cpuset/restricted/cpus
 
-        # Enable oom_reaper
-	if [ -f /sys/module/lowmemorykiller/parameters/oom_reaper ]; then
-		echo 1 > /sys/module/lowmemorykiller/parameters/oom_reaper
-	else
-		echo 1 > /proc/sys/vm/reap_mem_on_sigkill
-	fi
+	# Setup final blkio
+	# value for group_idle is us
+	echo 1000 > /dev/blkio/blkio.weight
+	echo 100 > /dev/blkio/background/blkio.weight
+	echo 2000 > /dev/blkio/blkio.group_idle
+	echo 0 > /dev/blkio/background/blkio.group_idle
+
+	# Stock LMK settings
+	echo "18432,23040,27648,51256,150296,200640" > /sys/module/lowmemorykiller/parameters/minfree
 
 	# Enable bus-dcvs
 	for device in /sys/devices/platform/soc
