@@ -140,6 +140,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/powerhint.xml:$(TARGET_COPY_OUT_PRODUCT)/vendor_overlay/$(PRODUCT_TARGET_VNDK_VERSION)/etc/powerhint.xml
 
+#Recorder
+PRODUCT_PACKAGES += \
+    Recorder
+
 # Ril
 PRODUCT_PACKAGES += \
     android.hardware.radio@1.4
