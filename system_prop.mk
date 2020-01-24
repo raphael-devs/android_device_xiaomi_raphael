@@ -144,11 +144,17 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.radio.redir_party_num=1 \
     persist.vendor.radio.report_codec=1 \
     telephony.lteOnCdmaDevice=1 \
-    persist.dbg.wfc_avail_ovr=1
-
+    persist.dbg.wfc_avail_ovr=1 \
+    persist.data.iwlan=1 \ 
+    persist.data.iwlan.ipsec.ap=1 \
+    persist.sys.cust.lte_config=true \
+    persist.radio.VT_ENABLE=1 \
+    persist.radio.volte.dan_support=true \
+    
+  
 # RCS
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.rcs.supported=0
+    persist.rcs.supported=1
 
 # Sensors
 PRODUCT_PROPERTY_OVERRIDES += \
