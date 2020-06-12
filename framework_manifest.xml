@@ -9,7 +9,7 @@
         </interface>
     </hal>
     <hal format="hidl">
-        <name>vendor.lineage.biometrics.fingerprint.inscreen</name>
+        <name>vendor.p404.biometrics.fingerprint.inscreen</name>
         <transport>hwbinder</transport>
         <version>1.0</version>
         <interface>

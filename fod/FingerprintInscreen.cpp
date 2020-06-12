@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2019 The LineageOS Project
+ * Copyright (C) 2019 The p404OS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,7 +39,7 @@
 #define BRIGHTNESS_PATH "/sys/class/backlight/panel0-backlight/brightness_clone"
 
 namespace vendor {
-namespace lineage {
+namespace p404 {
 namespace biometrics {
 namespace fingerprint {
 namespace inscreen {
@@ -141,5 +141,5 @@ Return<void> FingerprintInscreen::setCallback(const sp<IFingerprintInscreenCallb
 }  // namespace inscreen
 }  // namespace fingerprint
 }  // namespace biometrics
-}  // namespace lineage
+}  // namespace p404
 }  // namespace vendor
