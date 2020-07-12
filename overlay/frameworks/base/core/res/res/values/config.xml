@@ -448,5 +448,9 @@
 
     <!-- FOD Icon Dimming -->
     <bool name="config_targetUsesInKernelDimming">false</bool>
+
+    <!-- Shows the required view for in-display fingerprint -->
+    <bool name="config_needCustomFODView">true</bool>
+
 </resources>
 
