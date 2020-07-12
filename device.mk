@@ -68,7 +68,7 @@ PRODUCT_PACKAGES += \
 
 # Fingerprint
 PRODUCT_COPY_FILES += \
-    vendor/404/config/permissions/vendor.lineage.biometrics.fingerprint.inscreen.xml:system/etc/permissions/vendor.p404.biometrics.fingerprint.inscreen.xml
+    vendor/404/configs/permissions/vendor.p404.biometrics.fingerprint.inscreen.xml:system/etc/permissions/vendor.p404.biometrics.fingerprint.inscreen.xml
 
 PRODUCT_PACKAGES += \
     p404.biometrics.fingerprint.inscreen@1.0-service.raphael
