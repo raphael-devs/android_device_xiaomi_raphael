@@ -60,7 +60,6 @@ product/lib/libdpmtcm.so
 -product/priv-app/dpmserviceapp/dpmserviceapp.apk
 
 # Display postprocessing
-product/lib64/libsdm-disp-apis.qti.so
 product/lib64/vendor.display.color@1.0.so
 product/lib64/vendor.display.color@1.1.so
 product/lib64/vendor.display.color@1.2.so
