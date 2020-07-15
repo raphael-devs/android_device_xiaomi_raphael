@@ -8,7 +8,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.camera.sat.fallback.dist=40 \
     persist.camera.sat.fallback.dist.d=10 \
-    persist.camera.sat.fallback.luxindex=310 \
+    persist.camera.sat.fallback.luxindex=330 \
     persist.camera.sat.fallback.lux.d=50 \
     persist.vendor.camera.enableNCSService=TRUE \
     persist.vendor.camera.enableTOFInterface=TRUE \
@@ -18,6 +18,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.cne.feature=1 \
     persist.vendor.dpm.feature=1 \
+    persist.vendor.dpm.loglevel=0 \
     persist.vendor.dpm.nsrm.bkg.evt=3955
 
 # Data Modules
@@ -45,12 +46,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Graphics
 PRODUCT_PROPERTY_OVERRIDES += \
     debug.sf.disable_backpressure=1 \
+    debug.sf.latch_unsignaled=1 \
     debug.sf.enable_hwc_vds=1
-
-# IOP
-PRODUCT_PROPERTY_OVERRIDES += \
-    vendor.iop.enable_prefetch_ofr=0 \
-    vendor.iop.enable_uxe=0
 
 # Media
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -77,9 +74,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.dbg.vt_avail_ovr=1 \
     persist.dbg.wfc_avail_ovr=1 \
     persist.radio.NO_STAPA=1 \
-    persist.radio.VT_CAM_INTERFACE=1 \
+    persist.radio.VT_HYBRID_ENABLE=1 \
     persist.vendor.data.iwlan.enable=true \
-    persist.vendor.radio.data_con_rprt=1 \
+    persist.vendor.ims.disableADBLogs=1 \
+    persist.vendor.ims.disableIMSLogs=1 \
     persist.vendor.radio.enable_temp_dds=true \
     persist.vendor.radio.force_on_dc=true \
     persist.vendor.radio.redir_party_num=1 \
