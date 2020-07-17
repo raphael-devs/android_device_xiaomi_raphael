@@ -1,6 +1,0 @@
-service fingerprint-inscreen-1-0 /system/bin/hw/p404.biometrics.fingerprint.inscreen@1.0-service.raphael
-    interface vendor.p404.biometrics.fingerprint.inscreen@1.0::IFingerprintInscreen default
-    class hal
-    user system
-    group system wakelock
-    shutdown critical

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2019 The P404OS Project
+ * Copyright (C) 2019 The PAOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,15 +14,15 @@
  * limitations under the License.
  */
 
-#ifndef VENDOR_P404_BIOMETRICS_FINGERPRINT_INSCREEN_V1_0_FINGERPRINTINSCREEN_H
-#define VENDOR_P404_BIOMETRICS_FINGERPRINT_INSCREEN_V1_0_FINGERPRINTINSCREEN_H
+#ifndef VENDOR_PA_BIOMETRICS_FINGERPRINT_INSCREEN_V1_0_FINGERPRINTINSCREEN_H
+#define VENDOR_PA_BIOMETRICS_FINGERPRINT_INSCREEN_V1_0_FINGERPRINTINSCREEN_H
 
-#include <vendor/p404/biometrics/fingerprint/inscreen/1.0/IFingerprintInscreen.h>
+#include <vendor/pa/biometrics/fingerprint/inscreen/1.0/IFingerprintInscreen.h>
 #include <vendor/xiaomi/hardware/displayfeature/1.0/IDisplayFeature.h>
 #include <vendor/xiaomi/hardware/fingerprintextension/1.0/IXiaomiFingerprint.h>
 
 namespace vendor {
-namespace p404 {
+namespace pa {
 namespace biometrics {
 namespace fingerprint {
 namespace inscreen {
@@ -64,7 +64,7 @@ class FingerprintInscreen : public IFingerprintInscreen {
 }  // namespace inscreen
 }  // namespace fingerprint
 }  // namespace biometrics
-}  // namespace p404
+}  // namespace pa
 }  // namespace vendor
 
-#endif  // VENDOR_P404_BIOMETRICS_FINGERPRINT_INSCREEN_V1_0_FINGERPRINTINSCREEN_H
+#endif  // VENDOR_PA_BIOMETRICS_FINGERPRINT_INSCREEN_V1_0_FINGERPRINTINSCREEN_H

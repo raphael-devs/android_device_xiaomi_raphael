@@ -5,4 +5,4 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/p404_raphael.mk
+    $(LOCAL_DIR)/pa_raphael.mk

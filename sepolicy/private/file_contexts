@@ -5,5 +5,5 @@
 /persist(/.*)?           u:object_r:persist_file:s0
 
 # HALs
-/system/bin/hw/p404\.biometrics\.fingerprint\.inscreen@1\.0-service\.raphael                                 u:object_r:hal_fod_raphael_exec:s0
+/system/bin/hw/pa\.biometrics\.fingerprint\.inscreen@1\.0-service\.raphael                                 u:object_r:hal_fod_raphael_exec:s0
 
