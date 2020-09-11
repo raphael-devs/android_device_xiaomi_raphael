@@ -143,6 +143,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     Recorder
 
+# OTA
+PRODUCT_HOST_PACKAGES += \
+    signapk
+
 # Ril
 PRODUCT_PACKAGES += \
     android.hardware.radio@1.4
