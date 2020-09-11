@@ -54,9 +54,11 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     BluetoothQti
 
-# Board
 PRODUCT_USES_QCOM_HARDWARE := true
 PRODUCT_BOARD_PLATFORM := msmnile
+# Bootanimation
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/prebuilts/bootanimation.zip:$(TARGET_COPY_OUT_PRODUCT)/media/bootanimation.zip
 
 # Camera
 PRODUCT_PACKAGES += \
