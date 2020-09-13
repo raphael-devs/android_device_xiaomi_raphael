@@ -139,15 +139,15 @@ TARGET_RELEASETOOLS_EXTENSIONS := $(DEVICE_PATH)
 TARGET_PROVIDES_QTI_TELEPHONY_JAR := true
 
 # Sepolicy
-BOARD_PLAT_PRIVATE_SEPOLICY_DIR += \
-    $(DEVICE_PATH)/sepolicy/private \
-    device/qcom/sepolicy/generic/private \
-    device/qcom/sepolicy/qva/private
+#BOARD_PLAT_PRIVATE_SEPOLICY_DIR += \
+#    $(DEVICE_PATH)/sepolicy/private \
+#    device/qcom/sepolicy/generic/private \
+#    device/qcom/sepolicy/qva/private
 
-BOARD_PLAT_PUBLIC_SEPOLICY_DIR += \
-    device/qcom/sepolicy/generic/public \
-    device/qcom/sepolicy/qva/public
-
+#BOARD_PLAT_PUBLIC_SEPOLICY_DIR += \
+#    device/qcom/sepolicy/generic/public \
+#    device/qcom/sepolicy/qva/public
+BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy-minimal
 # Power
 TARGET_USES_INTERACTION_BOOST := true
 TARGET_TAP_TO_WAKE_NODE := "/dev/input/event3"
