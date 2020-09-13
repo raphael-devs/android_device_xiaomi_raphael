@@ -24,7 +24,7 @@ cc_binary {
         "libhardware",
         "libhardware_legacy",
         "libhidlbase",
-        "libhidltransport",
+//        "libhidltransport",
         "liblog",
         "libhwbinder",
         "libutils",
