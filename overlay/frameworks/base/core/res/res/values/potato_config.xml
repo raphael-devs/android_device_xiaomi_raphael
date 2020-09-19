@@ -85,4 +85,7 @@
 
     <!-- Burn in protection -->
     <bool name="config_statusBarBurnInProtection">true</bool>
+
+    <!-- Whether device has FOD -->
+    <bool name="config_supportsInDisplayFingerprint">true</bool>
 </resources>
