@@ -9,6 +9,9 @@ $(call inherit-product, device/xiaomi/raphael/device.mk)
 # Inherit some common POTATO stuff.
 $(call inherit-product, vendor/potato/config/common_full_phone.mk)
 
+# Inherit GMS
+$(call inherit-product-if-exists, vendor/google/gms/config.mk)
+
 # Inherit PSU
 $(call inherit-product-if-exists, vendor/google/psu/google-psu.mk)
 
