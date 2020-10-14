@@ -21,3 +21,6 @@ hal_client_domain(hal_fod_raphael, hal_fingerprint)
 
 # Allow to use wakelock
 wakelock_use(hal_fod_raphael)
+
+# hwservice context
+add_hwservice(hal_fod_raphael, hal_fingerprint_hwservice_xiaomi)
