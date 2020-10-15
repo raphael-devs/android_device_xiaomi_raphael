@@ -20,9 +20,8 @@
 #include <sys/_system_properties.h>
 #include <sys/sysinfo.h>
 
+#include "property_service.h"
 #include "vendor_init.h"
-
-using ::android::base::SetProperty;
 
 void property_override(char const prop[], char const value[]) {
     prop_info *pi;
