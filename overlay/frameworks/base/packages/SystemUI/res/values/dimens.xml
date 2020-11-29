@@ -18,4 +18,7 @@
 <resources>
     <dimen name="rounded_corner_content_padding">12dp</dimen>
     <dimen name="system_icons_keyguard_padding_end">4dp</dimen>
+
+    <!-- Padding between signal cluster and battery icon -->
+    <dimen name="signal_cluster_battery_padding">6dp</dimen>
 </resources>
