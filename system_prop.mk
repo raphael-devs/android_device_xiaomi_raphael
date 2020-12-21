@@ -52,6 +52,10 @@ PRODUCT_PRODUCT_PROPERTIES += \
     ro.surface_flinger.supports_background_blur=1 \
     ro.sf.blurs_are_expensive=1
 
+# Gboard
+PRODUCT_PROPERTY_OVERRIDES += \
+ro.com.google.ime.kb_pad_port_b=1
+
 # Graphics
 PRODUCT_PROPERTY_OVERRIDES += \
     debug.sf.disable_backpressure=1 \
