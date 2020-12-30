@@ -1,3 +1,1 @@
 user=system seinfo=platform name=org.lineageos.settings domain=xiaomi_settings type=system_app_data_file
-
-user=_app seinfo=platform name=com.google.android.flipendo domain=flipendo type=app_data_file levelFrom=all
