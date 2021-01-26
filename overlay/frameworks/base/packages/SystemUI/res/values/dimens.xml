@@ -23,5 +23,5 @@
     <dimen name="signal_cluster_battery_padding">6dp</dimen>
 
      <!-- Bottom margin size when fingerprint in display is active -->
-    <dimen name="keyguard_indication_margin_bottom_fingerprint_in_display">192dp</dimen>
+    <dimen name="keyguard_indication_margin_bottom_fingerprint_in_display">30dp</dimen>
 </resources>
