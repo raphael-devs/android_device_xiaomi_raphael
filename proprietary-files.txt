@@ -38,27 +38,6 @@ product/lib64/vendor.qti.hardware.data.qmi@1.0.so
 lib64/libdiag_system.so
 lib/libdiag_system.so
 
-# DPM
-framework/tcmclient.jar
-product/bin/dpmd
-product/etc/dpm/dpm.conf
-product/etc/init/dpmd.rc
-product/etc/permissions/com.qti.dpmframework.xml
-product/etc/permissions/dpmapi.xml
-product/framework/com.qti.dpmframework.jar
-product/framework/dpmapi.jar
-product/lib64/com.qualcomm.qti.dpm.api@1.0.so
-product/lib64/libdpmctmgr.so
-product/lib64/libdpmfdmgr.so
-product/lib64/libdpmframework.so
-product/lib64/libdpmtcm.so
-product/lib/com.qualcomm.qti.dpm.api@1.0.so
-product/lib/libdpmctmgr.so
-product/lib/libdpmfdmgr.so
-product/lib/libdpmframework.so
-product/lib/libdpmtcm.so
--product/priv-app/dpmserviceapp/dpmserviceapp.apk
-
 # Display postprocessing
 product/lib64/libsdm-disp-apis.qti.so
 product/lib64/vendor.display.color@1.0.so
